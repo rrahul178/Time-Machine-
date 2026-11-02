@@ -1,0 +1,10 @@
+{
+  "crypto": {
+    "interval": "1h",
+    "symbols": ["BTCUSDT", "ETHUSDT", "BNBUSDT", "SOLUSDT", "XRPUSDT"]
+  },
+  "forex": {
+    "interval": "1h",
+    "symbols": ["EUR/USD", "GBP/USD", "USD/JPY", "AUD/USD", "XAU/USD"]
+  }
+}

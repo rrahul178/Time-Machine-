@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Trade Lab</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>Trade Lab</h1>
+    <span id="updated" class="muted"></span>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Scanner</h2>
+      <div class="scroll">
+        <table id="scan">
+          <thead>
+            <tr><th>Market</th><th>Symbol</th><th>TF</th><th>Price</th><th>Signal</th><th>TM win%</th><th>History win%</th></tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <p class="muted">সারিতে ক্লিক করলে Time Machine চলবে।</p>
+    </section>
+
+    <section class="card">
+      <h2>Time Machine <span id="tm-title" class="muted"></span></h2>
+      <div class="row">
+        <button data-side="">Auto</button>
+        <button data-side="long">Long (hypothetical)</button>
+        <button data-side="short">Short (hypothetical)</button>
+      </div>
+      <div id="tm-out" class="muted">একটি symbol বেছে নিন।</div>
+    </section>
+
+    <section class="card">
+      <h2>Risk Manager</h2>
+      <div class="grid">
+        <label>Capital<input id="capital" type="number" value="1000" /></label>
+        <label>Risk % / trade<input id="riskPct" type="number" step="0.1" value="1" /></label>
+        <label>Daily loss limit %<input id="dailyLimit" type="number" step="0.1" value="3" /></label>
+        <label>আজকের P&amp;L<input id="dayPnl" type="number" value="0" /></label>
+        <label>আজকের ট্রেড সংখ্যা<input id="tradesToday" type="number" value="0" /></label>
+        <label>Max ট্রেড / দিন<input id="maxTrades" type="number" value="5" /></label>
+      </div>
+      <div id="risk-out" class="muted">Time Machine চালালে এখানে পজিশন সাইজ দেখাবে।</div>
+    </section>
+
+    <p class="muted small">শুধু শিক্ষামূলক টুল। ফলাফল ঐতিহাসিক সম্ভাবনা, ভবিষ্যদ্বাণী নয়।</p>
+  </main>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

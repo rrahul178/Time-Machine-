@@ -1,0 +1,34 @@
+:root {
+  --bg: #0f1115; --card: #181b22; --line: #272b35; --text: #e6e8ee; --muted: #8b92a3;
+  --green: #2ecc8f; --red: #ff6b6b; --accent: #5b8cff;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text); font: 15px/1.5 system-ui, sans-serif; }
+header { display: flex; align-items: baseline; gap: 12px; padding: 16px; max-width: 960px; margin: 0 auto; }
+h1 { margin: 0; font-size: 20px; }
+h2 { margin: 0 0 12px; font-size: 16px; }
+main { max-width: 960px; margin: 0 auto; padding: 0 16px 32px; display: grid; gap: 16px; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 16px; }
+.muted { color: var(--muted); }
+.small { font-size: 12px; }
+.scroll { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; }
+th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); white-space: nowrap; }
+tbody tr { cursor: pointer; }
+tbody tr:hover { background: #1f232c; }
+tbody tr.sel { background: #222838; }
+.long { color: var(--green); font-weight: 600; }
+.short { color: var(--red); font-weight: 600; }
+.row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 12px; }
+button { background: #232838; color: var(--text); border: 1px solid var(--line); border-radius: 6px; padding: 6px 12px; cursor: pointer; }
+button:hover { border-color: var(--accent); }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin-bottom: 12px; }
+label { display: grid; gap: 4px; font-size: 13px; color: var(--muted); }
+input { background: var(--bg); color: var(--text); border: 1px solid var(--line); border-radius: 6px; padding: 6px 8px; }
+.kv { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 8px; margin: 8px 0; }
+.kv div { background: var(--bg); border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; }
+.kv b { display: block; font-size: 18px; }
+.bar { height: 10px; border-radius: 5px; overflow: hidden; display: flex; background: var(--line); margin: 8px 0; }
+.bar i { display: block; height: 100%; }
+.ok { color: var(--green); font-weight: 600; }
+.bad { color: var(--red); font-weight: 600; }

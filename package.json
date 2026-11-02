@@ -1,0 +1,11 @@
+{
+  "name": "trade-lab",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "scan": "node scripts/scan.js",
+    "test": "node scripts/selftest.js"
+  }
+}
