@@ -17,7 +17,7 @@ async function loadScan() {
     body.innerHTML = '';
     for (const row of j.results) {
       const tr = document.createElement('tr');
-      const sig = row.signal ? `<span class="${row.signal.side}">${row.signal.side.toUpperCase()}</span>` : '<span class="muted">—</span>';
+      const sig = row.signal ? `<span class="${row.signal.side}">${row.signal.side.toUpperCase()}${row.signal.setup ? ' · ' + esc(row.signal.setup.toUpperCase()) : ''}</span>` : '<span class="muted">—</span>';
       tr.innerHTML = row.error
         ? `<td>${esc(row.market)}</td><td>${esc(row.symbol)}</td><td>${esc(row.interval)}</td><td colspan="4" class="bad">${esc(row.error)}</td>`
         : `<td>${esc(row.market)}</td><td>${esc(row.symbol)}</td><td>${esc(row.interval)}</td><td>${num(row.price)}</td><td>${sig}</td><td>${pc(row.probTP)}</td><td>${pc(row.hist?.winRate)}</td>`;
@@ -60,7 +60,7 @@ function renderTM(j) {
   const b = j.bootstrap;
   const h = j.history;
   out.innerHTML = `
-    <p><span class="${s.side}">${s.side.toUpperCase()}</span> ${s.hypothetical ? '(হাইপোথেটিক্যাল)' : `(${s.barsAgo} বার আগে)`}
+    <p><span class="${s.side}">${s.side.toUpperCase()}${s.setup ? ' · ' + esc(s.setup.toUpperCase()) : ''}</span> ${s.hypothetical ? '(হাইপোথেটিক্যাল)' : `(${s.barsAgo} বার আগে)`}
        — Entry ${num(s.entry)} · SL ${num(s.sl)} · TP ${num(s.tp)} · RR ${s.rr}</p>
     <div class="kv">
       <div>TP আগে লাগার সম্ভাবনা<b>${pc(b.probTP)}</b></div>

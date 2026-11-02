@@ -1,10 +1,24 @@
 {
   "crypto": {
     "interval": "1h",
-    "symbols": ["BTCUSDT", "ETHUSDT", "BNBUSDT", "SOLUSDT", "XRPUSDT"]
+    "symbols": [
+      "BTCUSDT",
+      "ETHUSDT",
+      "BNBUSDT",
+      "SOLUSDT",
+      "XRPUSDT"
+    ],
+    "strategy": "all"
   },
   "forex": {
     "interval": "1h",
-    "symbols": ["EUR/USD", "GBP/USD", "USD/JPY", "AUD/USD", "XAU/USD"]
+    "symbols": [
+      "EUR/USD",
+      "GBP/USD",
+      "USD/JPY",
+      "AUD/USD",
+      "XAU/USD"
+    ],
+    "strategy": "all"
   }
 }

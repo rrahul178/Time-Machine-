@@ -1,5 +1,6 @@
 import { getCandles } from '../core/data.js';
 import { timeMachine } from '../core/timemachine.js';
+import { STRATEGIES } from '../core/signals.js';
 
 const SYMBOL_RE = /^[A-Z0-9]{3,12}(\/[A-Z0-9]{3,6})?$/;
 const INTERVALS = ['5m', '15m', '30m', '1h', '4h', '1d'];
@@ -22,7 +23,8 @@ export default async function handler(req, res) {
     const candles = await getCandles({
       market, symbol, interval, limit: 1000, apiKey: process.env.TWELVE_DATA_API_KEY,
     });
-    const out = timeMachine(candles, { rr, runs, side });
+    const strategy = STRATEGIES.includes(q.strategy) ? q.strategy : 'all';
+    const out = timeMachine(candles, { rr, runs, side, strategy });
 
     res.setHeader('Cache-Control', 's-maxage=60, stale-while-revalidate=300');
     res.status(200).json({ market, symbol, interval, ...out });

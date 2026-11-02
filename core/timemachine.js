@@ -1,4 +1,5 @@
-import { atr, findSignals, simulate } from './strategy.js';
+import { atr, simulate } from './strategy.js';
+import { getSignals } from './signals.js';
 
 function rng(seed) {
   let a = seed >>> 0;
@@ -13,9 +14,10 @@ function rng(seed) {
 const pct = (sorted, p) => sorted[Math.min(sorted.length - 1, Math.floor(p * sorted.length))];
 
 /** এই সেটআপ অতীতে যতবার এসেছে, প্রতিবারের ফলাফল। */
-export function historicalStats(c, side, { rr, horizon, pivotLen, excludeI }) {
-  const sigs = findSignals(c, { pivotLen, rr }).filter(
-    (s) => s.side === side && s.i !== excludeI && s.i + horizon <= c.length - 1,
+export function historicalStats(c, side, { rr, horizon, pivotLen, excludeI, strategy, setup }) {
+  const sigs = getSignals(c, { strategy, pivotLen, rr }).filter(
+    (s) => s.side === side && (!setup || s.setup === setup)
+      && s.i !== excludeI && s.i + horizon <= c.length - 1,
   );
   let wins = 0, losses = 0, timeouts = 0, sumR = 0, grossW = 0, grossL = 0;
   for (const s of sigs) {
@@ -82,10 +84,10 @@ export function bootstrap(c, sig, { runs, horizon, lookback, seed }) {
 export function timeMachine(c, opts = {}) {
   const {
     rr = 2, horizon = 24, runs = 10000, pivotLen = 3,
-    recent = 2, side, lookback = 500, seed = 42,
+    recent = 2, side, lookback = 500, seed = 42, strategy = 'all',
   } = opts;
   const last = c.length - 1;
-  const sigs = findSignals(c, { pivotLen, rr });
+  const sigs = getSignals(c, { strategy, pivotLen, rr });
   let sig = [...sigs].reverse().find((s) => s.i >= last - recent && (!side || s.side === side));
   let hypothetical = false;
 
@@ -104,14 +106,15 @@ export function timeMachine(c, opts = {}) {
   }
 
   const history = historicalStats(c, sig.side, {
-    rr, horizon, pivotLen, excludeI: hypothetical ? -1 : sig.i,
+    rr, horizon, pivotLen, strategy, setup: hypothetical ? undefined : sig.setup,
+    excludeI: hypothetical ? -1 : sig.i,
   });
   const boot = bootstrap(c, sig, { runs, horizon, lookback, seed });
 
   return {
     price: c[last].c,
     signal: {
-      side: sig.side, entry: sig.entry, sl: sig.sl, tp: sig.tp, rr: sig.rr,
+      setup: sig.setup ?? null, side: sig.side, entry: sig.entry, sl: sig.sl, tp: sig.tp, rr: sig.rr,
       risk: sig.risk, barsAgo: last - sig.i, time: sig.t, hypothetical,
     },
     bootstrap: boot,

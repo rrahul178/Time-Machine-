@@ -34,3 +34,17 @@ Crypto (Binance) + Forex (Twelve Data) এর জন্য Scanner, Time Machine
 - ফ্রি Twelve Data: মিনিটে ৮ রিকোয়েস্ট, তাই scanner forex-এ ৮ সেকেন্ড বিরতি দেয়। `/api/timemachine` পাবলিক থাকলে অন্যরা আপনার কোটা খরচ করতে পারে, তাই চাইলে Vercel-এ password protection দিন।
 - Forex লট হিসাব USD-quoted pair-এ নির্ভুল; USD/JPY-তে ইউনিট quote currency-তে আসে।
 - Vercel Hobby-তে deploy সীমা আছে; ঘণ্টায় একবার স্ক্যান নিরাপদ।
+
+## স্ট্র্যাটেজি (`config/watchlist.json` → `strategy`)
+
+| মান | সেটআপ |
+|---|---|
+| `ob` | Liquidity Sweep → MSS/CHoCH (displacement) → Order Block retest |
+| `fvg` | Fair Value Gap retest (structure bias অনুযায়ী) |
+| `ifvg` | শক্ত ক্যান্ডেলে ভাঙা FVG উল্টে গিয়ে retest |
+| `bos` | সাধারণ swing break (বেসলাইন) |
+| `all` | ob + fvg + ifvg (ডিফল্ট) |
+
+Time Machine-এর "অতীতের একই সেটআপ" হিসাব শুধু একই setup (যেমন OB) আর একই দিকের সিগন্যাল ধরে।
+`/api/timemachine?strategy=ob` দিয়ে API-তেও বেছে নেওয়া যায়।
+প্যারামিটার (sweepWindow, dispAtr, maxAge, minGapAtr ইত্যাদি) `core/ict.js`-এ বদলানো যায়।

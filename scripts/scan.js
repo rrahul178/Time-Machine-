@@ -15,7 +15,7 @@ for (const market of ['crypto', 'forex']) {
     const row = { market, symbol, interval: conf.interval };
     try {
       const candles = await getCandles({ market, symbol, interval: conf.interval, limit: 1000, apiKey });
-      const tm = timeMachine(candles, { runs: 5000 });
+      const tm = timeMachine(candles, { runs: 5000, strategy: conf.strategy || 'all' });
       row.price = tm.price;
       row.signal = tm.signal;
       row.probTP = tm.bootstrap?.probTP ?? null;

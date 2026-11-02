@@ -28,7 +28,7 @@ const clamp = (x, lo, hi) => Math.min(hi, Math.max(lo, x));
 function make(side, i, entry, risk, rr, t) {
   const dir = side === 'long' ? 1 : -1;
   return {
-    side, i, t, entry, risk, rr,
+    setup: 'bos', side, i, t, entry, risk, rr,
     sl: entry - dir * risk,
     tp: entry + dir * rr * risk,
   };
