@@ -1,36 +1,21 @@
 {
-  "updatedAt": "2026-11-08T14:59:53.204Z",
+  "updatedAt": "2026-11-08T19:29:18.521Z",
   "results": [
     {
       "market": "crypto",
       "symbol": "BTCUSDT",
       "interval": "1h",
-      "price": 75930.02,
-      "signal": {
-        "setup": "ifvg",
-        "side": "long",
-        "entry": 75981.09,
-        "sl": 75787.14018577129,
-        "tp": 76368.9896284574,
-        "rr": 2,
-        "risk": 193.94981422870478,
-        "barsAgo": 2,
-        "time": 1794135600000,
-        "hypothetical": false
-      },
-      "probTP": 0.284,
-      "expectedR": -0.148,
-      "hist": {
-        "n": 5,
-        "winRate": 0.2,
-        "expectancyR": -0.4
-      }
+      "price": 75943.12,
+      "signal": null,
+      "probTP": null,
+      "expectedR": null,
+      "hist": null
     },
     {
       "market": "crypto",
       "symbol": "ETHUSDT",
       "interval": "1h",
-      "price": 2236.35,
+      "price": 2236.47,
       "signal": null,
       "probTP": null,
       "expectedR": null,
@@ -40,32 +25,32 @@
       "market": "crypto",
       "symbol": "BNBUSDT",
       "interval": "1h",
-      "price": 697.08,
+      "price": 698.35,
       "signal": {
-        "setup": "fvg",
-        "side": "long",
-        "entry": 699.13,
-        "sl": 696.8098548449962,
-        "tp": 703.7702903100077,
+        "setup": "ifvg",
+        "side": "short",
+        "entry": 696.57,
+        "sl": 698.6850639229933,
+        "tp": 692.3398721540135,
         "rr": 2,
-        "risk": 2.3201451550038428,
-        "barsAgo": 2,
-        "time": 1794135600000,
+        "risk": 2.115063922993272,
+        "barsAgo": 1,
+        "time": 1794157200000,
         "hypothetical": false
       },
-      "probTP": 0.327,
-      "expectedR": -0.01881210792512839,
+      "probTP": 0.3524,
+      "expectedR": 0.0572,
       "hist": {
-        "n": 12,
-        "winRate": 0.25,
-        "expectancyR": -0.10676645859292459
+        "n": 4,
+        "winRate": 0.5,
+        "expectancyR": 0.5
       }
     },
     {
       "market": "crypto",
       "symbol": "SOLUSDT",
       "interval": "1h",
-      "price": 89.23,
+      "price": 89.56,
       "signal": null,
       "probTP": null,
       "expectedR": null,
@@ -75,32 +60,17 @@
       "market": "crypto",
       "symbol": "XRPUSDT",
       "interval": "1h",
-      "price": 1.16,
-      "signal": {
-        "setup": "ifvg",
-        "side": "short",
-        "entry": 1.16,
-        "sl": 1.176174301426131,
-        "tp": 1.1276513971477378,
-        "rr": 2,
-        "risk": 0.016174301426131077,
-        "barsAgo": 0,
-        "time": 1794142800000,
-        "hypothetical": false
-      },
-      "probTP": 0.2936,
-      "expectedR": 0.17402512150727706,
-      "hist": {
-        "n": 1,
-        "winRate": 0,
-        "expectancyR": -1
-      }
+      "price": 1.1581,
+      "signal": null,
+      "probTP": null,
+      "expectedR": null,
+      "hist": null
     },
     {
       "market": "forex",
       "symbol": "EUR/USD",
       "interval": "1h",
-      "price": 1.11433,
+      "price": 1.1137,
       "signal": null,
       "probTP": null,
       "expectedR": null,
@@ -110,7 +80,7 @@
       "market": "forex",
       "symbol": "GBP/USD",
       "interval": "1h",
-      "price": 1.33545,
+      "price": 1.33443,
       "signal": null,
       "probTP": null,
       "expectedR": null,
@@ -120,7 +90,7 @@
       "market": "forex",
       "symbol": "USD/JPY",
       "interval": "1h",
-      "price": 158.48578,
+      "price": 158.37806,
       "signal": null,
       "probTP": null,
       "expectedR": null,
@@ -130,7 +100,7 @@
       "market": "forex",
       "symbol": "AUD/USD",
       "interval": "1h",
-      "price": 0.68643,
+      "price": 0.68705,
       "signal": null,
       "probTP": null,
       "expectedR": null,
@@ -140,11 +110,26 @@
       "market": "forex",
       "symbol": "XAU/USD",
       "interval": "1h",
-      "price": 4065.96019,
-      "signal": null,
-      "probTP": null,
-      "expectedR": null,
-      "hist": null
+      "price": 4069.82239,
+      "signal": {
+        "setup": "fvg",
+        "side": "long",
+        "entry": 4068.97581,
+        "sl": 4066.0502173687746,
+        "tp": 4074.8269952624505,
+        "rr": 2,
+        "risk": 2.9255926312252996,
+        "barsAgo": 2,
+        "time": 1794193200000,
+        "hypothetical": false
+      },
+      "probTP": 0.2188,
+      "expectedR": -0.3436,
+      "hist": {
+        "n": 17,
+        "winRate": 0.23529411764705882,
+        "expectancyR": -0.29411764705882354
+      }
     }
   ]
 }
