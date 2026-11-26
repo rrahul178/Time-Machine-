@@ -1,11 +1,11 @@
 {
-  "updatedAt": "2026-11-25T22:23:22.034Z",
+  "updatedAt": "2026-11-26T04:54:37.185Z",
   "results": [
     {
       "market": "crypto",
       "symbol": "BTCUSDT",
       "interval": "1h",
-      "price": 60237.86,
+      "price": 60779.98,
       "signal": null,
       "probTP": null,
       "expectedR": null,
@@ -15,7 +15,7 @@
       "market": "crypto",
       "symbol": "ETHUSDT",
       "interval": "1h",
-      "price": 1686.17,
+      "price": 1697.83,
       "signal": null,
       "probTP": null,
       "expectedR": null,
@@ -25,7 +25,7 @@
       "market": "crypto",
       "symbol": "BNBUSDT",
       "interval": "1h",
-      "price": 552.96,
+      "price": 558.87,
       "signal": null,
       "probTP": null,
       "expectedR": null,
@@ -35,7 +35,7 @@
       "market": "crypto",
       "symbol": "SOLUSDT",
       "interval": "1h",
-      "price": 70.63,
+      "price": 71.03,
       "signal": null,
       "probTP": null,
       "expectedR": null,
@@ -45,7 +45,7 @@
       "market": "crypto",
       "symbol": "XRPUSDT",
       "interval": "1h",
-      "price": 0.9411,
+      "price": 0.9576,
       "signal": null,
       "probTP": null,
       "expectedR": null,
@@ -55,7 +55,7 @@
       "market": "forex",
       "symbol": "EUR/USD",
       "interval": "1h",
-      "price": 1.09762,
+      "price": 1.09607,
       "signal": null,
       "probTP": null,
       "expectedR": null,
@@ -65,7 +65,7 @@
       "market": "forex",
       "symbol": "GBP/USD",
       "interval": "1h",
-      "price": 1.31178,
+      "price": 1.31004,
       "signal": null,
       "probTP": null,
       "expectedR": null,
@@ -75,61 +75,61 @@
       "market": "forex",
       "symbol": "USD/JPY",
       "interval": "1h",
-      "price": 159.18584,
-      "signal": {
-        "setup": "ob",
-        "side": "short",
-        "entry": 159.18584,
-        "sl": 159.39180848961217,
-        "tp": 158.7739030207757,
-        "rr": 2,
-        "risk": 0.20596848961216097,
-        "barsAgo": 0,
-        "time": 1795680000000,
-        "hypothetical": false
-      },
-      "probTP": 0.254,
-      "expectedR": -0.15293227458503497,
-      "hist": {
-        "n": 1,
-        "winRate": 0,
-        "expectancyR": -0.4119970266476067
-      }
+      "price": 159.16245,
+      "signal": null,
+      "probTP": null,
+      "expectedR": null,
+      "hist": null
     },
     {
       "market": "forex",
       "symbol": "AUD/USD",
       "interval": "1h",
-      "price": 0.66284,
+      "price": 0.664,
       "signal": {
         "setup": "ifvg",
-        "side": "short",
-        "entry": 0.66272,
-        "sl": 0.6638746638470524,
-        "tp": 0.6604106723058951,
+        "side": "long",
+        "entry": 0.66407,
+        "sl": 0.661521086394737,
+        "tp": 0.6691678272105263,
         "rr": 2,
-        "risk": 0.0011546638470524284,
-        "barsAgo": 2,
-        "time": 1795672800000,
+        "risk": 0.0025489136052631034,
+        "barsAgo": 1,
+        "time": 1795698000000,
         "hypothetical": false
       },
-      "probTP": 0.4482,
-      "expectedR": 0.39205766900558425,
+      "probTP": 0.037,
+      "expectedR": -0.44875992038088164,
       "hist": {
-        "n": 4,
-        "winRate": 0.5,
-        "expectancyR": 0.665202544608869
+        "n": 5,
+        "winRate": 0.4,
+        "expectancyR": 0.41585991821520585
       }
     },
     {
       "market": "forex",
       "symbol": "XAU/USD",
       "interval": "1h",
-      "price": 3589.22798,
-      "signal": null,
-      "probTP": null,
-      "expectedR": null,
-      "hist": null
+      "price": 3576.49738,
+      "signal": {
+        "setup": "fvg",
+        "side": "long",
+        "entry": 3564.98652,
+        "sl": 3551.555504078966,
+        "tp": 3591.8485518420684,
+        "rr": 2,
+        "risk": 13.431015921034177,
+        "barsAgo": 2,
+        "time": 1795694400000,
+        "hypothetical": false
+      },
+      "probTP": 0.2364,
+      "expectedR": -0.28746685492076157,
+      "hist": {
+        "n": 22,
+        "winRate": 0.2727272727272727,
+        "expectancyR": -0.18181818181818182
+      }
     }
   ]
 }
